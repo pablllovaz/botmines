@@ -66,7 +66,7 @@ async def addadmin(message: Message, command: CommandObject) -> None:
     await message.answer(f"VOCÊ NÃO TEM PERMISSÃO PARA EXCLUIR ADMINS! ❌")
 
 
-@dp.message(Command('bloquear'))
+@dp.message(Command('removercanal'))
 async def delchannel(message: Message, command: CommandObject) -> None:
   quem_enviou_o_comando = str(message.from_user.id)
   if quem_enviou_o_comando in get_admins():
@@ -101,7 +101,8 @@ async def sendsignal(message: Message) -> None:
       while True:
         for channel in get_channels():
           cid = channel['chat_id']
-          txt = f"{gerar_sinal()}\n\n<a href='{channel['link']}'>📝ABRIR - MINES!🌐</a>"
+          txt = f"{gerar_sinal()}\n\n<a href='{channel['link']}'>🙈𝗔𝗕𝗥𝗜𝗥 - 𝗠𝗜𝗡𝗘𝗦 (𝗖𝗟𝗜𝗤𝗨𝗘 𝗔𝗤𝗨𝗜)💣</a> \n </a> href='{channel['link']}'>🍀𝗖𝗔𝗗𝗔𝗦𝗧𝗥𝗔-𝗦𝗘 𝗡𝗔 𝗣𝗟𝗔𝗧𝗔𝗙𝗢𝗥𝗠𝗔</a>"
+          try:"
           try:
             await bot.send_message(chat_id=cid, text=txt, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
           except:
