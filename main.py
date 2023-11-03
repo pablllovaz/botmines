@@ -15,15 +15,15 @@ TOKEN = ("6555641047:AAGtRnjH6e3O5_1NAa6pDJT5zBPK0C4ke6g")
 
 bot = Bot(TOKEN, parse_mode=ParseMode.HTML)
 dp = Dispatcher()
-ADMIN_SUPREMO = '6294280493'
+ADMIN_SUPREMO = '5915298829'
 
 @dp.message(CommandStart())
 async def inicializao(message: Message) -> None:
-  await message.answer(f"Olá, {hbold(message.from_user.full_name)}! ❌VOCÊ NÃO POSSUI ACESSO!")
+  await message.answer(f"OLÁ, {hbold(message.from_user.full_name)}! ❌VOCÊ NÃO POSSUI ACESSO!")
 
 @dp.message(Command('alertageral'))
 async def alerta(message: Message) -> None:
-  await message.answer('ALERTAR GERAL - INFORMAR \n Com o este comando você enviara uma mensagem para todos os canais, Você pode enviar videos, imagens e textos! \n ⚠️Veja abaixo um exemplo de como notificar: \n [ALERTA] OLÁ A TODOS(A)')
+  await message.answer(f'𝖠𝖫𝖤𝖱𝖳𝖠 𝖦𝖤𝖱𝖠𝖫 - 𝖨𝖭𝖥𝖮𝖬𝖠𝖱 este comando você enviara uma mensagem para todos os canais, Você pode enviar videos, imagens e textos! \n \n ⚠️Veja abaixo um exemplo de como notificar:  \n  \n [ALERTA] OLÁ A TODOS(A)')
   
   
   
@@ -44,9 +44,9 @@ async def listadmin(message: Message, command: CommandObject) -> None:
   quem_enviou_o_comando = str(message.from_user.id)
   if quem_enviou_o_comando == ADMIN_SUPREMO:
     if len(get_admins()) > 0:
-      msg = "ESTES SÃO OS ADMINISTRADORES NO SISTEMA:\n\n"
+      msg = "📌ESTES SÃO OS ADMINISTRADORES NO SISTEMA:\n\n"
       for adm in get_admins():
-        msg += f"{hcode(adm)}\n"
+        msg += f"  ━━━━━━━━ ● ━━━━━━━━ \n🧑🏻QUEM ADICIONOU: VOCÊ \n🆔USER ID:{hcode(adm)}\n"
       await message.answer(msg)
     else:
       await message.answer(f"NO MOMENTO NÃO HÁ ADMINS CADASTRADOS! ❌")
@@ -85,7 +85,7 @@ async def listchannels(message: Message, command: CommandObject) -> None:
     if quem_enviou_o_comando in get_admins():
       msg = "📌ESSES SÃO OS CANAIS PRESENTES:\n\n"
       for channel in get_channels():
-          msg += f"NOME: {channel['channel_name']}\nID: {hcode(channel['chat_id'])}\nAUTOR: {channel['author']}\n\n"
+          msg += f"  ━━━━━━━━ ● ━━━━━━━━ \n🧑🏻NOME DO CANAL: {channel['channel_name']}\n🆔CHAT ID: {hcode(channel['chat_id'])}\n🎃INDENTIFICADOR: {channel['author']}\n\n"
       await message.answer(msg)
     else:
       await message.answer(f"VOCÊ NÃO TEM PERMISSÃO PARA LISTAR CANAIS! ❌")
@@ -147,7 +147,7 @@ async def random_value(call: types.CallbackQuery):
         add_channel(cid, link, channel_name, author)
         for admin_id in get_admins():
           await call.message.delete()
-          await bot.send_message(chat_id=admin_id, text=f"""Canal {channel_name} autorizado! ✅""")
+          await bot.send_message(chat_id=admin_id, text=f"""CANAL {channel_name} AUTORIZADO! ✅ \n Utilize o comamdo /listarcanais para mais informaões""")
     if call.data == "recusar":
         await call.message.delete()
 
@@ -163,7 +163,7 @@ async def channel_post_handler(channel_post: types.Message, command: CommandObje
     keyboard_inline = InlineKeyboardMarkup(inline_keyboard=[[button1, button2]])
 
   
-    txt = f"🌚UMA NOVA SOLICITAÇÃO DE REGISTRO! \n 🔥CANAL: \"{channel_name}\" \n 👑INDENTIFICADOR: {author} , \n ❗️ID DO CANAL: {cid} \n 💎LINK DE AFILIADO: {link}"
+    txt = f"🌚UMA NOVA SOLICITAÇÃO DE REGISTRO! \n  \n 🔥CANAL: \"{channel_name}\" \n 👑INDENTIFICADOR: {author} , \n ❗️ID DO CANAL: {cid} \n 💎LINK DE AFILIADO: {link}"
     for admin_id in get_admins():
       await bot.send_message(chat_id=admin_id, text=txt, reply_markup=keyboard_inline)
 

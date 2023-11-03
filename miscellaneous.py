@@ -34,10 +34,10 @@ def gerar_sinal():
   if len(minuto) == 1:
     minuto = "0"+minuto
 
-  sinal = f"""💰 Entrada Confirmada 💰
-🚨 N° de tentativas: {random.randint(2,5)}
-💣 03 MINAS
-🕑 Entrada: {hora}:{minuto}\n\n"""
+  sinal = f"""💰 𝗘𝗡𝗧𝗥𝗔𝗗𝗔 𝗖𝗢𝗡𝗙𝗜𝗥𝗠𝗔𝗗𝗔 💰
+🚨 𝗡° 𝗗𝗲 𝗧𝗲𝗻𝘁𝗮𝘁𝗶𝘃𝗮𝘀: {random.randint(2,5)}
+💣 03 𝗠𝗜𝗡𝗔𝗦
+🕑 𝗘𝗡𝗧𝗥𝗔𝗗𝗔: {hora}:{minuto}\n\n"""
 
   for i in range(5):
     for j in range(5):
