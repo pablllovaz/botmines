@@ -101,7 +101,7 @@ async def sendsignal(message: Message) -> None:
       while True:
         for channel in get_channels():
           cid = channel['chat_id']
-          txt = f"{gerar_sinal()}\n\n<a href='{channel['link']}'>🙈𝗔𝗕𝗥𝗜𝗥 - 𝗠𝗜𝗡𝗘𝗦 (𝗖𝗟𝗜𝗤𝗨𝗘 𝗔𝗤𝗨𝗜)💣</a>\n<a> href='{channel['link']}'>🍀𝗖𝗔𝗗𝗔𝗦𝗧𝗥𝗔-𝗦𝗘 𝗡𝗔 𝗣𝗟𝗔𝗧𝗔𝗙𝗢𝗥𝗠𝗔</a>"
+          txt = f"{gerar_sinal()}\n\n<a href='{channel['link']}'>🙈𝗔𝗕𝗥𝗜𝗥 - 𝗠𝗜𝗡𝗘𝗦 (𝗖𝗟𝗜𝗤𝗨𝗘 𝗔𝗤𝗨𝗜)💣</a> \n \n <a href='{channel['link']}'>🙈𝗔𝗕𝗥𝗜𝗥 - 𝗠𝗜𝗡𝗘𝗦 (𝗖𝗟𝗜𝗤𝗨𝗘 𝗔𝗤𝗨𝗜)💣</a>"
           try:
             await bot.send_message(chat_id=cid, text=txt, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
           except:
