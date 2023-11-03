@@ -20,7 +20,13 @@ ADMIN_SUPREMO = '6294280493'
 @dp.message(CommandStart())
 async def inicializao(message: Message) -> None:
   await message.answer(f"Olá, {hbold(message.from_user.full_name)}! ❌VOCÊ NÃO POSSUI ACESSO!")
-	
+
+@dp.message(Command('alertageral'))
+async def alerta(message: Message) -> None:
+  await message.answer('teste')
+  
+  
+  
 @dp.message(Command('add'))
 async def addadmin(message: Message, command: CommandObject) -> None:
   quem_enviou_o_comando = str(message.from_user.id)
@@ -178,9 +184,9 @@ async def alertageral(message: types.Message) -> None:
   else:
     await message.answer(f"Sem canais no sistema! ❌")
 
-@dp.message(Command('alertageral'))
-async def myid(message: Message) -> None:
-  await message.answer(f"""ALERTAR GERAL - INFORMAR \n Com o este comando você enviara uma mensagem para todos os canais, Você pode enviar videos, imagens e textos! \n ⚠️Veja abaixo um exemplo de como notificar: \n [ALERTA] OLÁ A TODOS(A)""")
+# @dp.message(Command('alertageral'))
+# async def myid(message: Message) -> None:
+  # message.answer(f"""ALERTAR GERAL - INFORMAR \n Com o este comando você enviara uma mensagem para todos os canais, Você pode enviar videos, imagens e textos! \n ⚠️Veja abaixo um exemplo de como notificar: \n [ALERTA] OLÁ A TODOS(A)""")
 
 async def main() -> None:
     await dp.start_polling(bot)
