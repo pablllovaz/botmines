@@ -23,7 +23,7 @@ async def inicializao(message: Message) -> None:
 
 @dp.message(Command('alertageral'))
 async def alerta(message: Message) -> None:
-  await message.answer('teste')
+  await message.answer('ALERTAR GERAL - INFORMAR \n Com o este comando você enviara uma mensagem para todos os canais, Você pode enviar videos, imagens e textos! \n ⚠️Veja abaixo um exemplo de como notificar: \n [ALERTA] OLÁ A TODOS(A)')
   
   
   
@@ -163,7 +163,7 @@ async def channel_post_handler(channel_post: types.Message, command: CommandObje
     keyboard_inline = InlineKeyboardMarkup(inline_keyboard=[[button1, button2]])
 
   
-    txt = f"O CANAL \"{channel_name}\" DE {author} , \n ID DO CHAT DO CANAL: {cid} \n LINK DE AFILIADO: {link}"
+    txt = f"🌚UMA NOVA SOLICITAÇÃO DE REGISTRO! \n 🔥CANAL: \"{channel_name}\" \n 👑INDENTIFICADOR: {author} , \n ❗️ID DO CANAL: {cid} \n 💎LINK DE AFILIADO: {link}"
     for admin_id in get_admins():
       await bot.send_message(chat_id=admin_id, text=txt, reply_markup=keyboard_inline)
 
@@ -183,10 +183,6 @@ async def alertageral(message: types.Message) -> None:
       await message.answer(f"VOCÊ NÂO TEM PERMISSÃO PARA ALERTAR CANAIS. \n Caso tente novamente sua conta do telegram será bloqueada! ❌")
   else:
     await message.answer(f"Sem canais no sistema! ❌")
-
-# @dp.message(Command('alertageral'))
-# async def myid(message: Message) -> None:
-  # message.answer(f"""ALERTAR GERAL - INFORMAR \n Com o este comando você enviara uma mensagem para todos os canais, Você pode enviar videos, imagens e textos! \n ⚠️Veja abaixo um exemplo de como notificar: \n [ALERTA] OLÁ A TODOS(A)""")
 
 async def main() -> None:
     await dp.start_polling(bot)
