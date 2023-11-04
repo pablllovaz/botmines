@@ -50,7 +50,7 @@ async def listadmin(message: Message, command: CommandObject) -> None:
   quem_enviou_o_comando = str(message.from_user.id)
   if quem_enviou_o_comando == ADMIN_SUPREMO:
     if len(get_admins()) > 0:
-      msg = "📌ESTES SÃO OS ADMINISTRADORES NO SISTEMA:\n\n"
+      msg = "📌𝗘𝗦𝗧𝗘𝗦 𝗦𝗔𝗢 𝗢𝗦 𝗔𝗗𝗠𝗜𝗡𝗜𝗦𝗧𝗥𝗔𝗗𝗢𝗥𝗘𝗦 𝗡𝗢 𝗦𝗜𝗦𝗧𝗘𝗠𝗔:\n\n"
       for adm in get_admins():
         msg += f"  ━━━━━━━━ ● ━━━━━━━━ \n🧑🏻QUEM ADICIONOU: VOCÊ \n🆔USER ID:{hcode(adm)}\n"
       await message.answer(msg)
@@ -89,7 +89,7 @@ async def listchannels(message: Message, command: CommandObject) -> None:
   quem_enviou_o_comando = str(message.from_user.id)
   if len(get_admins()) > 0:
     if quem_enviou_o_comando in get_admins():
-      msg = "📌ESSES SÃO OS CANAIS PRESENTES:\n\n"
+      msg = "📌𝗘𝗦𝗦𝗘𝗦 𝗦𝗔𝗢 𝗢𝗦 𝗖𝗔𝗡𝗔𝗜𝗦 𝗣𝗥𝗘𝗦𝗘𝗡𝗧𝗘𝗦:\n\n"
       for channel in get_channels():
           msg += f"  ━━━━━━━━ ● ━━━━━━━━ \n🧑🏻NOME DO CANAL: {channel['channel_name']}\n🆔CHAT ID: {hcode(channel['chat_id'])}\n🎃INDENTIFICADOR: {channel['author']}\n\n"
       await message.answer(msg)
