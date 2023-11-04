@@ -179,7 +179,7 @@ https://short.io/pt
 /id
    => INFORMAÇÕES DO USUÁRIO.
 
-🚀CASO TENHA ALGUMA DÚVIDA ENTRE EM CONTATO COM O SUPORTE: @pabolovaz 🍀""")
+🚀CASO TENHA ALGUMA DÚVIDA ENTRE EM CONTATO COM O SUPORTE: @pabolovaz 🍀""", parse_mode=ParseMode.HTML, disable_web_page_preview=True)
 
 @dp.callback_query()
 async def random_value(call: types.CallbackQuery):
