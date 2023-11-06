@@ -15,7 +15,7 @@ TOKEN = ("6555641047:AAGtRnjH6e3O5_1NAa6pDJT5zBPK0C4ke6g")
 
 bot = Bot(TOKEN, parse_mode=ParseMode.HTML)
 dp = Dispatcher()
-ADMIN_SUPREMO = '5915298829'
+ADMIN_SUPREMO = '6294280493'
 
 @dp.message(CommandStart())
 async def inicializao(message: Message) -> None:
